@@ -1,0 +1,7 @@
+# Cache
+/src/__pycache__/
+__pycache__
+
+# Automatically generated files
+/src/parser.out
+/src/parsetab.py
