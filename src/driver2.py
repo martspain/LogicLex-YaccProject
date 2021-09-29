@@ -82,11 +82,19 @@ def plotGraph(g,res):
     if len(res) == 1:
         g.add_node(res[0])
 
-text = input('Ingrese la expresion: ')
-parser = yacc.yacc()
-res = parser.parse(text)
-print('RESULTADO: ', res)
-g = nx.DiGraph()
-plotGraph(g,res)
-nx.draw(g , with_labels=True, arrows=True)
-plt.show()
+flag = True
+while flag:
+    text = input('Ingrese la expresion: ')
+    parser = yacc.yacc()
+    res = parser.parse(text)
+    print('RESULTADO: ', res)
+    g = nx.DiGraph()
+    plotGraph(g,res)
+    nx.draw(g , with_labels=True, arrows=True)
+    plt.show()
+    decision = input("\n\nDesea ingresar una nueva expresion? s/n")
+    if decision == 's' or 'S':
+        flag = True
+    if decision == 'n' or 'N':
+        flag = False
+print("Programa terminado")
